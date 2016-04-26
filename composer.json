@@ -1,0 +1,21 @@
+{
+    "name": "adip/yii2-yee-product",
+    "description": "Backend module for managing product related posts",
+    "type": "yii2-extension",
+    "keywords": [""],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Adi Priyanto",
+            "email": "adipriyanto.bpn@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "yeesoft\\product\\": ""
+        }
+    }
+}
