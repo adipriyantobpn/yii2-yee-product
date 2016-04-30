@@ -1,31 +1,69 @@
-yii2-yee-product
-================
-Backend module for managing product related posts
+# yii2-yee-product
+
+##Yee CMS - Product Module
+
+####Backend module for managing products 
+
+This module is part of Yee CMS (based on Yii2 Framework).
+
+Product module lets you easily create products on your site. 
 
 Installation
 ------------
 
-The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
+- Install [Yee Media Module](https://github.com/yeesoft/yii2-yee-media) if it is not installed yet.
 
-Either run
+- Either run
 
 ```
-php composer.phar require --prefer-dist adip/yii2-yee-product "*"
+composer require --prefer-dist yeesoft/yii2-yee-product "*"
 ```
 
 or add
 
 ```
-"adip/yii2-yee-product": "*"
+    "repositories": {
+        "yii2-yee-product": {
+          "type": "git",
+          "url": "https://github.com/adipriyantobpn/yii2-yee-product"
+        }
+    },
+    "require": {
+        "adip/yii2-yee-product": "*"
+    }
 ```
 
-to the require section of your `composer.json` file.
+in your `composer.json` file.
 
-
-Usage
------
-
-Once the extension is installed, simply use it in your code by  :
+- Run migrations
 
 ```php
-<?= \yeesoft\product\AutoloadExample::widget(); ?>```
+yii migrate --migrationPath=@vendor/adip/yii2-yee-product/migrations/
+```
+
+Configuration
+------
+- In your backend config file
+
+```php
+'modules'=>[
+	'product' => [
+		'class' => 'yeesoft\product\ProductModule',
+	],
+],
+```
+
+Dashboard widget
+-------  
+
+You can use dashboard widget to display short information about recent activity in the module.
+
+Add this code in your control panel dashboard to display widget:
+```php
+echo \yeesoft\product\widgets\dashboard\Products::widget();
+```
+
+Screenshots
+-------  
+
+[Flickr - Yee CMS Product Module](https://www.flickr.com/photos/134050409@N07/sets/72157656324703598)
